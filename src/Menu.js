@@ -6,11 +6,11 @@ const Menu = ({ dishes }) => {
       {dishes.map(({ id, title, price, img, desc }) => {
         return (
           <section key={id} className='single-item-container'>
-            <img src={img} alt={`${title}`} />
+            <img src={img} alt={`${title}`} className='image' />
             <div className='content-container'>
               <header className='name-price-container'>
                 <h3 className='name'>{title}</h3>
-                <h3 className='price'>{price}</h3>
+                <h3 className='price'>$ {price}</h3>
               </header>
               <p className='description'>{desc}</p>
             </div>

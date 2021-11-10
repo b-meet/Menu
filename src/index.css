@@ -1,0 +1,116 @@
+:root {
+  /* dark shades of primary color*/
+  --radius: 0.25rem;
+  --main-clr: hsl(210, 36%, 96%);
+  --main-text-clr: hsl(209, 61%, 16%);
+  --gold-clr: #c59d5f;
+  --white-clr: #fff;
+  --dotted-border-clr: hsl(210, 22%, 49%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+  background: var(--main-clr);
+  color: var(--main-text-clr);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.main-heading {
+  max-width: max-content;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin: 4rem auto 2rem;
+  position: relative;
+}
+
+.main-heading::after {
+  content: "";
+  position: absolute;
+  inset: 56px 35px 0;
+  background: var(--gold-clr);
+}
+
+.btn-container {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background: none;
+  border: none;
+  border-radius: var(--radius);
+  color: var(--gold-clr);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 0 0.5rem;
+  padding: 0.375rem 0.75rem;
+  text-transform: capitalize;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--gold-clr);
+  color: var(--white-clr);
+}
+.menu-items-container {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  gap: 3rem 2rem;
+  justify-items: center;
+}
+.single-item-container {
+  display: grid;
+  gap: 1rem 2rem;
+  max-width: 25rem;
+}
+.image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border: 0.25rem solid var(--gold-clr);
+  border-radius: var(--radius);
+}
+.name-price-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px dotted var(--dotted-border-clr);
+}
+.name {
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+.price {
+  color: var(--gold-clr);
+}
+.description {
+  padding-top: 1rem;
+}
+
+@media screen and (min-width: 775px) {
+  .single-item-container {
+    grid-template-columns: 225px 1fr;
+    gap: 0 1.5rem;
+    max-width: 40rem;
+  }
+  .image {
+    height: 175px;
+  }
+}
+@media screen and (min-width: 1217px) {
+  .menu-items-container {
+    width: 95vw;
+    grid-template-columns: 1fr 1fr;
+  }
+  .image {
+    height: 150px;
+  }
+}
