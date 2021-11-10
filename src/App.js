@@ -6,6 +6,8 @@ import items from "./data";
 function App() {
   const [menuItems, setMenuItems] = useState(items);
 
+  // array of the categories available on the menu its use in buttons
+
   const available = [
     "all",
     ...new Set(
@@ -14,6 +16,8 @@ function App() {
       })
     ),
   ];
+
+  //on click handler function filters the menu items
 
   const filteredMenu = (category) => {
     const sortedMenu = items.filter((item) => item.category === category);
