@@ -1,7 +1,21 @@
 import React from "react";
 
-const Categories = () => {
-  return <article className='btn-container'></article>;
+const Buttons = ({ categories, filteration }) => {
+  return (
+    <article className='btn-container'>
+      {categories.map((category, index) => {
+        return (
+          <button
+            key={index}
+            className='btn'
+            onClick={() => filteration(category)}
+          >
+            {category}
+          </button>
+        );
+      })}
+    </article>
+  );
 };
 
-export default Categories;
+export default Buttons;
